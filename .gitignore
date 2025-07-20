@@ -1,0 +1,40 @@
+# === Java ===
+*.class
+*.jar
+*.war
+*.ear
+
+# === Build files ===
+/build/
+/dist/
+
+# === Logs ===
+*.log
+
+# === IDEs ===
+# NetBeans
+nbproject/private/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# === OS-generated ===
+.DS_Store
+Thumbs.db
+
+# === Others ===
+*.swp
+*.bak
+*.tmp
