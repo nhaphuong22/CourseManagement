@@ -37,7 +37,5 @@ public class RecommendationController {
             e.printStackTrace();
         }
 
-
-
     }
 }
