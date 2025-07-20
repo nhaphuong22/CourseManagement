@@ -46,7 +46,7 @@ Dự án được phát triển hoàn toàn bằng ngôn ngữ lập trình Java
 
 \- Hồ Văn Dương: Phát triển phần mở rộng cho hệ thống AI, bổ sung và hoàn thiện nội dung chi tiết cho từng lộ trình học tập dựa trên dữ liệu khóa học.  
 
-\- Nguyễn Nam Khánh: Xây dựng module đăng ký khóa học, xử lý nghiệp vụ nhập liệu và quản lý thông tin khóa học trong hệ thống.  
+\- Bùi Nam Khánh: Xây dựng module đăng ký khóa học, xử lý nghiệp vụ nhập liệu và quản lý thông tin khóa học trong hệ thống.  
 
 
 
