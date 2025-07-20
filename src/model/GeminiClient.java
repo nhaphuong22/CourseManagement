@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class GeminiClient {
-    private static final String API_KEY = "AIzaSyBR2ZCqRxKgv63azpZLI1BS4auVDFsEhy0";
+    private static final String API_KEY = "AIzaSyAqVYh0lUqa8BOSQCbusgOm7ZWWz4AEOo4";
     private static final String API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + API_KEY;
     private final HttpClient client = HttpClient.newHttpClient();
 
@@ -123,13 +123,25 @@ public class GeminiClient {
                 throw new RuntimeException("Không tìm thấy trường 'text' trong phản hồi của API.");
             }
             start += key.length();
-            int end = responseBody.indexOf("\"", start);
-            if (end == -1) {
-                throw new RuntimeException("Không tìm thấy dấu ngoặc kép đóng cho trường 'text'.");
+            StringBuilder content = new StringBuilder();
+            boolean escape = false;
+            for (int i = start; i < responseBody.length(); i++) {
+                char c = responseBody.charAt(i);
+                if (escape) {
+                    // Xử lý ký tự escape
+                    if (c == 'n') content.append('\n');
+                    else content.append(c);
+                    escape = false;
+                } else if (c == '\\') {
+                    escape = true;
+                } else if (c == '"') {
+                    break;
+                } else {
+                    content.append(c);
+                }
             }
-            String content = responseBody.substring(start, end);
-            content = content.replace("\\n", " ").trim();
-            return content;
+            String result = content.toString().replace("\\n", " ").trim();
+            return result;
         } catch (Exception e) {
             System.err.println("Không thể phân tích phản hồi từ API. Nội dung phản hồi: " + responseBody);
             System.err.println("Lỗi chi tiết: " + e.getMessage());

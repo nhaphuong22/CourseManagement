@@ -45,6 +45,7 @@ public class RecommendationView {
                     }
                 }
                 System.out.println();
+            }
             System.out.print("\n--> Bạn có muốn đăng ký tất cả các khóa học trên không? (y/n): ");
             String answer = Validation.getString("> ").trim().toLowerCase();
 
@@ -63,7 +64,7 @@ public class RecommendationView {
                 Set<String> alreadyRegistered = loadRegisteredCourseIds();
                 Set<String> usedTimeSlots = loadRegisteredTimeSlots();
 
-                
+                for (Course course : path) {
                     if (alreadyRegistered.contains(course.getCourseId())) {
                         System.out.println("Bạn đã đăng ký khóa học: " + course.getCourseId() + " - " + course.getCourseName() + ". Bỏ qua.");
                         continue;
@@ -101,18 +102,17 @@ public class RecommendationView {
                         } catch (NumberFormatException e) {
                             System.out.println("Nhập số hợp lệ.");
                         }
-                    
-                }
+                    }
                     String selectedTime = timeSlots[choice - 1];
                     saveCourseRegistration(course.getCourseId(), selectedTime);
                     usedTimeSlots.add(selectedTime);
+                }
                 System.out.println("\nHoàn tất đăng ký các khóa học chưa đăng ký trong lộ trình.");
             }
         }
-
         System.out.println("=======================================================\n");
     }
-    }
+
     public void displayError(String errorMessage) {
         System.err.println("\n--- ĐÃ CÓ LỖI XẢY RA ---");
         System.err.println(errorMessage);
@@ -169,6 +169,21 @@ public class RecommendationView {
         }
 
         return times;
+    }
+
+    public void displayCourseSummary(model.Course course, String summary) {
+        System.out.println("\n===== TÓM TẮT KHÓA HỌC =====");
+        System.out.println("Mã khóa học: " + course.getCourseId());
+        System.out.println("Tên khóa học: " + course.getCourseName());
+        System.out.println("Chủ đề: " + course.getTopic());
+        System.out.println("Cấp độ: " + course.getDifficulty());
+        System.out.println("--- Tóm tắt ---");
+        // Xuống hàng sau mỗi câu
+        String[] sentences = summary.split("(?<=[.!?])\\s+");
+        for (String sentence : sentences) {
+            System.out.println(sentence.trim());
+        }
+        System.out.println("============================\n");
     }
 }
 

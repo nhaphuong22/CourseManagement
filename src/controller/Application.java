@@ -15,8 +15,9 @@ public class Application extends Menu<String> {
             "Tìm kiếm khóa học",
             "Sắp xếp các khóa học theo tên",
             "Xóa một khóa học",
-            "AI Tu van khoa hoc",
-            "Đăng kí khóa học mới"
+            "AI Tư vấn lộ trình học",
+            "Đăng kí khóa học mới",
+            "Tóm tắt khóa học"
     };
     private CourseList courseList;
 
@@ -34,6 +35,7 @@ public class Application extends Menu<String> {
             case 4 -> delete();
             case 5 -> adviseCourse();
             case 6 -> courseList.registerCourse();
+            case 7 -> summarizeCourse();
             default -> System.exit(0);
         }
     }
@@ -63,6 +65,27 @@ public class Application extends Menu<String> {
         controller.start();
     }
 
+    public void summarizeCourse() {
+        String courseId = Validation.getString("Nhập mã khóa học cần tóm tắt: ");
+        GeminiClient client = new GeminiClient();
+        Recommendation service = new Recommendation(courseList, client);
+        RecommendationView view = new RecommendationView();
+        try {
+            var course = courseList.getCourseById(courseId);
+            if (course == null) {
+                System.out.println("Không tìm thấy khóa học với mã: " + courseId);
+                return;
+            }
+            StringBuilder description = new StringBuilder();
+            description.append("Khóa học: ").append(course.getCourseName()).append("\n");
+            description.append("Chủ đề: ").append(course.getTopic()).append("\n");
+            description.append("Cấp độ: ").append(course.getDifficulty()).append("\n");
+            String summary = client.summarizeCourseDescription(description.toString());
+            view.displayCourseSummary(course, summary);
+        } catch (Exception e) {
+            System.out.println("Lỗi khi tóm tắt khóa học: " + e.getMessage());
+        }
+    }
 
     public static void main(String[] args) {
         new Application("Quản lý khóa học", options).run();
