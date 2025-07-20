@@ -1,0 +1,21 @@
+CS101;Nhap mon Lap trinh Java;Lap trinh;Co ban
+CS201;Lap trinh huong doi tuong;Lap trinh;Trung cap
+DB101;Co so du lieu SQL;Co so du lieu;Co ban
+WD101;Thiet ke Web voi HTML & CSS;Phat trien Web;Co ban
+AI101;Gioi thieu ve Tri tue Nhan tao;Tri tue Nhan tao;Co ban
+AI201;Hoc may co ban;Tri tue Nhan tao;Trung cap
+DS201;Phan tich Du lieu voi Python;Khoa hoc Du lieu;Trung cap
+PM101;Quan ly du an Agile;Quan ly Du an;Trung cap
+WD201;Lap trinh Web voi JavaScript;Phat trien Web;Trung cap
+WD301;Phat trien Web Fullstack;Phat trien Web;Nang cao
+AI301;Deep Learning nang cao;Tri tue Nhan tao;Nang cao
+DS101;Nhap mon Khoa hoc Du lieu;Khoa hoc Du lieu;Co ban
+DS301;Khoa hoc Du lieu nang cao;Khoa hoc Du lieu;Nang cao
+PM201;Quan ly du an nang cao;Quan ly Du an;Nang cao
+DB201;Toi uu hoa Co so du lieu;Co so du lieu;Trung cap
+DB301;Quan tri Co so du lieu nang cao;Co so du lieu;Nang cao
+SEC101;Nhap mon An toan mang;An toan mang;Co ban
+SEC201;Bao mat he thong;An toan mang;Trung cap
+SEC301;Phan tich ma doc;An toan mang;Nang cao
+SEC202;Quan tri an ninh mang;An toan mang;Trung cap
+SEC302;Kiem thu xam nhap (Penetration Testing);An toan mang;Nang cao
