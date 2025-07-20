@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class RecommendationView {
     public void displayWelcomeMessage() {
-        System.out.println("--- AGENT TƯ VẤN LỘ TRÌNH HỌC TẬP (MVC Version) ---");
+        System.out.println("--- AGENT TƯ VẤN LỘ TRÌNH HỌC TẬP---");
     }
 
     public String promptForUserGoal() {
@@ -30,18 +30,25 @@ public class RecommendationView {
             int step = 1;
             for (Course course : path) {
                 System.out.printf("Bước %d: %s\n", step++, course);
-                if (!course.getDescription().isEmpty()) {
-                    System.out.print("   📝 Tóm tắt:\n");
-                    // Tách các câu và in mỗi câu trên một dòng
-                    String[] sentences = course.getDescription().split("(?<=[.!?])\\s+");
-                    for (String sentence : sentences) {
-                        System.out.println("      " + sentence.trim());
-                    }
-                }
-                System.out.println();
             }
         }
         System.out.println("=======================================================\n");
+    }
+
+    public void displayDescription(ArrayList<Course> path) {
+        int step = 1;
+        for (Course course : path) {
+            if (!course.getDescription().isEmpty()) {
+                System.out.printf("Bước %d: %s\n", step++, course);
+                System.out.print("   📝 Tóm tắt:\n");
+                // Tách các câu và in mỗi câu trên một dòng
+                String[] sentences = course.getDescription().split("(?<=[.!?])\\s+");
+                for (String sentence : sentences) {
+                    System.out.println("      " + sentence.trim());
+                }
+            }
+            System.out.println();
+        }
     }
 
     public void displayError(String errorMessage) {

@@ -16,6 +16,7 @@ public class Application extends Menu<String> {
             "Sắp xếp các khóa học theo tên",
             "Xóa một khóa học",
             "AI Tu van khoa hoc",
+            "Tom tat khoa hoc",
             "Thoát"
     };
     private CourseList courseList;
@@ -33,6 +34,7 @@ public class Application extends Menu<String> {
             case 3 -> courseList.sort();
             case 4 -> delete();
             case 5 -> adviseCourse();
+            case 6 ->
             case 0 -> System.exit(0);
         }
     }

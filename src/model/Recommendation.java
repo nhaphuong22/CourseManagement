@@ -39,11 +39,11 @@ public class Recommendation {
             String summary = apiClient.summarizeCourseDescription(description.toString());
             // Tạo Course mới với tóm tắt
             Course courseWithSummary = new Course(
-                course.getCourseId(),
-                course.getCourseName(),
-                course.getTopic(),
-                course.getDifficulty(),
-                summary
+                    course.getCourseId(),
+                    course.getCourseName(),
+                    course.getTopic(),
+                    course.getDifficulty(),
+                    summary
             );
             recommendedCourses.set(i, courseWithSummary);
         }
