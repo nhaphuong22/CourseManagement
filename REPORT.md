@@ -22,15 +22,15 @@ Dự án được phát triển hoàn toàn bằng ngôn ngữ lập trình Java
 
 
 
-| STT | Tên chức năng             | Mô tả chi tiết                                                                                                                        |
+| STT | Tên chức năng             | Mô tả chi tiết                                                                                                                  
 
-|-----|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+|-----|---------------------------|--------------------------------------------------------------------------------------------------------------------------------|
 
-| 1   | Đăng ký khóa học          | Cho phép người dùng nhập và đăng ký các khóa học mới vào hệ thống thông qua giao diện console.                                        |
+| 1   | Đăng ký khóa học          | Cho phép người dùng nhập và đăng ký các khóa học mới vào hệ thống thông qua giao diện console.                                 |
 
-| 2   | AI gợi ý khóa học         | Sử dụng mô hình trí tuệ nhân tạo Gemini để phân tích yêu cầu người dùng và đưa ra đề xuất các khóa học phù hợp với mục tiêu học tập.  | 
+| 2   | AI gợi ý khóa học         | Sử dụng mô hình trí tuệ nhân tạo Gemini để phân tích yêu cầu người dùng và đưa ra đề xuất các khóa học phù hợp với mục tiêu học                                     tập.   
 
-| 3   | AI mô tả khóa học         | Tự động tạo ra phần mô tả chi tiết về từng khóa học dựa trên dữ liệu đã được thu thập và xử lý, giúp nâng cao trải nghiệm người dùng. |
+| 3   | AI mô tả khóa học         | Tự động tạo ra phần mô tả chi tiết về từng khóa học dựa trên dữ liệu đã được thu thập và xử lý, giúp nâng cao trải nghiệm người                                     dùng. 
 
 
 
